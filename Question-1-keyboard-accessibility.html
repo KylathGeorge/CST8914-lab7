@@ -214,14 +214,6 @@ article p {
       </nav>
     </div>
   </header>
-  <div class="newsletter">
-    <div class="container">
-      <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <label for="newsletterSignUp" class="offscreen">Enter your email to sign up for the funion newsletter</label> <!-- added label for the newsletter email, otherwise screen readers won't know what it is for-->
-      <input id = "newsletterSignUp" type="text">
-      <button type="button" onclick="getFocus()">Sign up</button></div>  <!-- changed this to onclick, this was opening a window just by focusing it with tab rather than interacting with it-->
-      
-    </div>
   </div>
   <main class="container">
     <h2 class="offscreen">Top story</h2>
@@ -287,10 +279,18 @@ article p {
     </div>
     
   </main>
-  <!--   stuff can be added here :)
-  <footer>
+
+<footer>
+  <div class="newsletter">
+    <div class="container">
+      <h3>Like the Funion? Consider joining our newsletter!</h3>
+      <label for="newsletterSignUp" class="offscreen">Enter your email to sign up for the funion newsletter</label> <!-- added label for the newsletter email, otherwise screen readers won't know what it is for-->
+      <input id = "newsletterSignUp" type="text">
+      <button type="button" onclick="getFocus()">Sign up</button></div>  <!-- changed this to onclick, this was opening a window just by focusing it with tab rather than interacting with it-->
+      
+    </div>
   </footer>
-  -->
+  
   
   <script>
     function getFocus() {
