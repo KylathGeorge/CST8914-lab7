@@ -33,20 +33,24 @@
           <input id="name" name="name" type="text" aria-required="true" /> <!-- added aria-required to show this is required -->
         </div>
         <div class="control">
-          <label>Biography</label><textarea id="biography" name="biography" type="text"></textarea>
-          <span>Include examples on your skills in JavaScript.</span>
+          <label for="biography">Biography</label>   <!-- added for = biography to link the label to the textarea -->
+          <textarea id="biography" name="biography" type="text" aria-describedby="biographyDescription"></textarea> <!-- added aria-describedby to describe the text area using the span -->
+          <span id="biographyDescription">Include examples on your skills in JavaScript.</span> <!-- added id to be used by the aria-describedby -->
         </div>
-        
-          <div>Gender</div>
+        <fieldset> <!-- added field set to group up the radio buttons-->
+          <legend>Gender</legend>   <!-- legend to label this set of radio buttons -->
           <div class="control">
-            <input id="gender_male" name="gender" type="radio" value="male" /><label>Male</label>
+            <input id="gender_male" name="gender" type="radio" value="male" />
+            <label for="gender_male">Male</label>  <!-- added for="gender_male" to connect it with the male gender input -->
           </div>
           <div class="control">
-            <input id="gender_female" name="gender" type="radio" value="female" /><label>Female</label>
+            <input id="gender_female" name="gender" type="radio" value="female" />
+            <label for="gender_female">Female</label> <!-- added for="gender_female" to connect it with the femaile gender input -->
           </div>
-        
+        </fieldset>
         <div class="control">
-          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" /><label>I accept the terms and conditions</label>
+          <input id="accept_agbs" name="accept_agbs" type="checkbox" value="1" aria-required="true" /> <!-- added aria-required = true to announce this is required-->
+          <label for="accept_agbs">I accept the terms and conditions <span class="required" aria-hidden="true">*</span></label>  <!-- added for="accept_gbs" to connect it with the same input id and aria hidden * to show it is required-->
         </div>
         <div class="control">
           <input name="validate" type="hidden" value="1" /><input type="submit" value="Register" />
