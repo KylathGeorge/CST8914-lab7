@@ -217,8 +217,9 @@ article p {
   <div class="newsletter">
     <div class="container">
       <h3>Like the Funion? Consider joining our newsletter!</h3>
-      <input type="text">
-      <button type="button" onfocus="getFocus()">Sign up</button></div>
+      <label for="newsletterSignUp" class="offscreen">Enter your email to sign up for the funion newsletter</label> <!-- added label for the newsletter email, otherwise screen readers won't know what it is for-->
+      <input id = "newsletterSignUp" type="text">
+      <button type="button" onclick="getFocus()">Sign up</button></div>  <!-- changed this to onclick, this was opening a window just by focusing it with tab rather than interacting with it-->
       
     </div>
   </div>
@@ -239,11 +240,11 @@ article p {
     <div class="side-by-side">
       <div class="column">
         <div class="tier-header">
-          <h2 tabindex="0">In the news</h2>
+          <h2>In the news</h2>    <!-- removed tab index for the header, headers are navigated using "h" on screen readers-->
         </div>
         <article>
           <h3 class="headline">Bee wonders if maybe everyone else is a drone and he's the only one who has it "figured out."</h3>
-          <p><a href="#" tabindex="1"><b>Read More</b></a></p>
+          <p><a href="#"><b>Read More</b></a></p>   <!-- removed tab index of 1, this should be never used to prevent weird tab jumps-->
           <img src="https://github.com/udacity/ud891/blob/gh-pages/lesson2-focus/02-dom-order/images/bee.jpg?raw=true" alt="A bee on top of a flower" />
         </article>
       </div>
