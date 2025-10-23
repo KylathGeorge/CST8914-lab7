@@ -86,7 +86,18 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              $('form').prepend('<fieldset class="errors"> tabindex="-1" role="alert" aria-live="assertive"<legend>Errors</legend><ul></ul></fieldset>');
+              // Create fieldset properly with attributes
+              const $errorFieldset = $('<fieldset>', {
+                class: 'errors',
+                tabindex: -1,             // focusable
+                role: 'alert',            // screen readers announce
+                'aria-live': 'assertive'  // dynamic updates announced
+              });
+
+              // Add legend and ul inside
+              $errorFieldset.append('<legend>Errors</legend>');
+              $errorFieldset.append('<ul></ul>');
+              $('form').prepend($errorFieldset);
             }
       
             $referencedElement = null;
