@@ -130,11 +130,21 @@
       
         $(document).ready(function () {
           if ($.urlParam('validate')) {
+
+            //Remove old errors before validating
+            $('.error').removeClass('error');
+            $('fieldset.errors').remove();
+
+            //Validate only the required fields
             validateInput('name', 'Please enter your name!');
             validateInput('accept_agbs', 'You must accept our terms and conditions!');
-      
-            if ($('.error').length === 0) {
-              return alert('All inputs are valid.');
+
+            //Show the alert only if both required fields are filled
+            const nameFilled = $('[name="name"]').val().trim().length > 0;
+            const termsAccepted = $('[name="accept_agbs"]').is(':checked');
+
+            if (nameFilled && termsAccepted) {
+              alert('All inputs are valid.');
             }
           }
         });
