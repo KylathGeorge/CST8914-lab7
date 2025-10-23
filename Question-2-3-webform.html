@@ -144,6 +144,8 @@
 
             if (nameFilled && termsAccepted) {
               alert('All inputs are valid.');
+              //reset on validation
+              $('form')[0].reset();     
             }
           }
         });
