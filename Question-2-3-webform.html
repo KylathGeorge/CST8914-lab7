@@ -144,8 +144,7 @@
           //clear errors when page is refreshed
           $('fieldset.errors').remove();
           
-          $('form').on('submit', function(e) {
-            e.preventDefault();  
+          if ($.urlParam('validate')) {
             //Remove old errors before validating the form again
             $('.error').removeClass('error');
             $('fieldset.errors').remove();
@@ -165,7 +164,7 @@
               $('input[type="radio"]').prop('checked', false);
               $('select').prop('selectedIndex', 0);
             }
-          });
+          }
         });
       }).call(void 0);</script>
                 
