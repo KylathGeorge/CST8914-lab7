@@ -145,8 +145,8 @@
             if (nameFilled && termsAccepted) {
               alert('All inputs are valid.');
               //reset on validation
-              nameFilled.val('');
-              termsAccepted.prop('checked', false)
+              $('input[type="text"], textarea').val('');
+              $('input[type="checkbox"], input[type="radio"]').prop('checked', false);
               $('[name="biography"]').val('');
               $('input[type="radio"]').prop('checked', false);
               $('select').prop('selectedIndex', 0);
