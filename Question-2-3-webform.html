@@ -112,7 +112,7 @@
               $referencedElement = $input;
             }
       // R.G. hint: fix next line ;)
-            $error = $('<a>' + message + '</a>');
+            $error = $('<a>',{text: message, class: 'error'} ,'</a>');
             $error.click(function (e) {
               // If we rely on the link's href pointing to the input's ID, it doesn't trigger forms mode in screen readers
               $referencedElement.focus();
@@ -161,7 +161,6 @@
               $('input[type="text"], textarea').val('');
               $('input[type="checkbox"], input[type="radio"]').prop('checked', false);
               $('[name="biography"]').val('');
-              $('input[type="radio"]').prop('checked', false);
               $('select').prop('selectedIndex', 0);
             }
           }
