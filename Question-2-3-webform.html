@@ -145,7 +145,11 @@
             if (nameFilled && termsAccepted) {
               alert('All inputs are valid.');
               //reset on validation
-              $('form')[0].reset();     
+              nameInput.val('');
+              termsCheckbox.prop('checked', false)
+              $('[name="biography"]').val('');
+              $('input[type="radio"]').prop('checked', false);
+              $('select').prop('selectedIndex', 0);
             }
           }
         });
