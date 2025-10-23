@@ -129,6 +129,8 @@
         };
       
         $(document).ready(function () {
+          //clear inputs when page is refreshed
+          $('form')[0].reset();
           if ($.urlParam('validate')) {
             //Remove old errors before validating the form again
             $('.error').removeClass('error');
