@@ -86,15 +86,14 @@
       
           if ((value = $.urlParam(input)) === null) {
             if ($('fieldset.errors').length === 0) {
-              // Create fieldset properly with attributes
+              //Create fieldset  with attributes
               const $errorFieldset = $('<fieldset>', {
                 class: 'errors',
-                tabindex: 0,             // focusable
-                role: 'alert',            // screen readers announce
-                'aria-live': 'assertive'  // dynamic updates announced
+                tabindex: 0,             //Make errors focusable
+                role: 'alert',            //Allows screen readers to announce the error 
               });
 
-              // Add legend and ul inside
+              //Add legend and ul inside
               $errorFieldset.append('<legend>Errors</legend>');
               $errorFieldset.append('<ul></ul>');
               $('form').prepend($errorFieldset);
@@ -142,6 +141,8 @@
         $(document).ready(function () {
           //clear inputs when page is refreshed
           $('form')[0].reset();
+          //clear errors when page is refreshed
+          $('fieldset.errors').remove();
           if ($.urlParam('validate')) {
             //Remove old errors before validating the form again
             $('.error').removeClass('error');
