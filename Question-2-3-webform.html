@@ -145,6 +145,7 @@
           $('fieldset.errors').remove();
           
           $('form').on('submit', function(e) {
+            e.preventDefault();  
             //Remove old errors before validating the form again
             $('.error').removeClass('error');
             $('fieldset.errors').remove();
